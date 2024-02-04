@@ -55,6 +55,8 @@ const options = {
   paginationDirection: dir.value,
   pagination: true,
   type: "loop",
+  interval: 4000,
+  autoplay: true,
   perPage: 2,
   breakpoints: {
     1024: {

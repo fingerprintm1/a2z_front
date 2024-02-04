@@ -110,7 +110,7 @@ export const useExamStore = defineStore("ExamStore", {
       }
     },
     doneQuestions(submission) {
-      if (submission && this.userAnswers.length >= this.DetailsQuestions.lenQuestions) {
+      if (submission && this.userAnswers.length < this.DetailsQuestions.lenQuestions) {
         tost.add({
           type: "error",
           message: `تم حل ${this.userAnswers.length} أسئلة من ${this.DetailsQuestions.lenQuestions} يجب حل جميع الأسئلة`,

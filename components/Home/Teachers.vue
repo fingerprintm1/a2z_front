@@ -36,7 +36,7 @@ const options = {
   type: "loop",
   arrows: true,
   autoplay: true,
-  interval: 2000,
+  interval: 4000,
   pagination: false,
   perPage: 3,
   gap: "0rem",

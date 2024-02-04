@@ -1,5 +1,5 @@
 <template>
-  <div :dir="dir == 'rtl' ? 'ltr' : 'rtl'" class="flex justify-center items-center gap-4 my-8 pb-4 rounded-full shadow-xl">
+  <div :dir="dir == 'rtl' ? 'ltr' : 'rtl'" class="flex flex-wrap justify-center items-center gap-4 my-8 pb-4 rounded-full shadow-xl px-4">
     <button
       v-for="i in ExamStore.getDetailsQuestions.lenQuestions"
       class="hover:bg-fp1 hover:text-white transition text-lg font-bold leading-4 w-8 h-8 pt-1 rounded-full flex justify-center items-center"

@@ -37,7 +37,7 @@ const options_other_slider = {
   type: "loop",
   arrows: true,
   autoplay: true,
-  interval: 2000,
+  interval: 4000,
   pagination: true,
   perPage: 3,
   gap: "0rem",

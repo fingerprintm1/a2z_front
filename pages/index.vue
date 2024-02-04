@@ -7,29 +7,29 @@
     <HomeHero />
     <!-- <HomeNumbers /> -->
 
-    <section class="py-8 lg:py-24">
+    <section class="py-8 lg:pb-24">
       <div class="container mx-auto">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16">{{ $t("teachers") }}</h2>
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-6 lg:mb-8">{{ $t("teachers") }}</h2>
         <HomeTeachers :teachers="globalStore.homeData.teachers" />
       </div>
     </section>
     <section>
-      <div class="lg:container mx-auto pb-16 lg:pb-24 lg:pt-10">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16">
+      <div class="lg:container mx-auto py-10 lg:pb-10 lg:pt-10">
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-6 mb-8">
           {{ $t("classes_courses") }}
         </h2>
         <HomeSubjects :subjects="globalStore.homeData.subjects" />
       </div>
     </section>
-    <section class="py-8 lg:py-24">
+    <section class="lg:pb-24">
       <div class="container mx-auto">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16">{{ $t("classes") }}</h2>
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-6 lg:mb-16">{{ $t("classes") }}</h2>
         <HomeSections :sections="globalStore.homeData.sections" />
       </div>
     </section>
-    <section class="py-8 lg:py-24">
+    <section class="pb-8 lg:pb-24">
       <div class="container mx-auto">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16">{{ $t("all_offers") }}</h2>
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16 lg:mb-8">{{ $t("all_offers") }}</h2>
         <HomeOffers :offers="globalStore.homeData.offers" />
       </div>
     </section>

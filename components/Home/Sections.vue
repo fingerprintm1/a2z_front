@@ -1,6 +1,6 @@
 <template v-if="sections.length > 0">
   <Splide :options="options" class="custom-arrow-slider">
-    <SplideSlide class="rounded-2xl overflow-hidden sm:pb-20 shadow-lg" v-for="section in props.sections" :key="section.id">
+    <SplideSlide class="rounded-2xl overflow-hidden lg:shadow-lg" v-for="section in props.sections" :key="section.id">
       <nuxt-link :to="localePath(`/section/${section.id}`)" class="link_classe relative z-20 hover:scale-105 shadow-lg transition-all group overflow-hidden border-0">
         <p
           class="relative lg:absolute z-10 inset-x-0 top-11 lg:-top-20 bg-white dark:bg-fpDark2 text-fp2 text-center text-xl lg:text-3xl font-bold py-2 transition-all group-hover:top-0 whitespace-nowrap"
@@ -33,7 +33,7 @@ const options = {
   type: "loop",
   arrows: true,
   autoplay: true,
-  interval: 2000,
+  interval: 4000,
   pagination: false,
   perPage: 3,
   gap: "2rem",
