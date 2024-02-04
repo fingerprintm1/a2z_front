@@ -26,6 +26,7 @@ export const useGlobalStore = defineStore("global", {
   },
   getters: {
     valueShowStudentMenu: state => state.showStudentMenu,
+    returnshowHeaders: state => state.showHeaders,
     homeData: state => state.home,
   },
   actions: {

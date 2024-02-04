@@ -1,17 +1,17 @@
 <template>
   <div class="">
     <ClientOnly>
-      <div v-show="globalStore.showHeaders">
+      <div v-show="globalStore.returnshowHeaders">
         <TopHeader />
-        <Header />
       </div>
+      <Header v-show="globalStore.returnshowHeaders" />
     </ClientOnly>
     <div class="lg:container lg:mx-auto my-24" v-if="Object.keys(globalStore.appSettings).length == 0">
       <Skeleton type="image_text" :count="6" />
     </div>
     <slot />
     <ClientOnly>
-      <Footer v-show="globalStore.showHeaders" />
+      <Footer v-show="globalStore.returnshowHeaders" />
     </ClientOnly>
     <NotificationContainer />
   </div>

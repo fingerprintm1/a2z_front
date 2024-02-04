@@ -5,7 +5,7 @@
   <!-- {{ $nuxt.$route.name }}  thaa-->
   <div v-if="globalStore.homeData.show && Object.keys(globalStore.appSettings).length != 0">
     <HomeHero />
-    <HomeNumbers />
+    <!-- <HomeNumbers /> -->
 
     <section class="py-8 lg:py-24">
       <div class="container mx-auto">

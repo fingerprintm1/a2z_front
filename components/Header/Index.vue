@@ -1,10 +1,10 @@
 <template>
   <header class="bg-slate-100 dark:bg-fpDark2 sticky top-0 start-0 z-100 whitespace-nowrap">
     <HeaderWhatsapp />
-    <div class="container flex items-center mx-auto py-4">
+    <div class="container flex items-center mx-auto py-2">
       <div class="w-full lg:w-1/12 flex justify-between items-center">
         <nuxt-link :to="localePath('/')">
-          <img src="~/assets/images/global/logo.png" alt="logo transparent" class="w-16 lg:w-20" />
+          <img src="~/assets/images/global/logo.png" alt="logo transparent" class="w-16" />
         </nuxt-link>
         <button type="button" class="dark:bg-white rounded-xl block lg:hidden" @click="globalStore.toggleMenu = !globalStore.toggleMenu">
           <img src="~/assets/images/student/menu.svg" alt="" class="w-12" />
