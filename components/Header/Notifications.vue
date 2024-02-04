@@ -37,13 +37,21 @@
               "
               class="flex items-center bg-gray-100 hover:bg-gray-200 dark:bg-fpDark2 dark:hover:bg-fpDark3 text-fp1 hover:text-fp2 p-2"
             >
-              <!-- <img
-                :src="globalStore.HashURLFile(`${baseURL}/images/certificates/${notification.data.certificate.file}.png`)"
-                alt="post image"
-                class="w-12 h-12 rounded-full object-cover"
-              /> -->
               <span class="flex flex-col text-start ms-2">
                 <span class="text-lg dark:text-fpLightBack" v-text="`${notification.data.certificate.message ?? ''}`"></span>
+              </span>
+            </button>
+            <button
+              v-if="'message' in notification.data"
+              @click="
+                globalStore.removeNotificationUser('message', notification.id);
+                globalStore.messageNotification = notification.data.message;
+                globalStore.ModalMessage = true;
+              "
+              class="flex items-center bg-gray-100 hover:bg-gray-200 dark:bg-fpDark2 dark:hover:bg-fpDark3 text-fp1 hover:text-fp2 p-2"
+            >
+              <span class="flex flex-col text-start ms-2">
+                <span class="text-lg dark:text-fpLightBack">{{ $t("message_site") }}</span>
               </span>
             </button>
             <nuxt-link

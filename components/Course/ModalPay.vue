@@ -60,7 +60,11 @@
           <!-- <h2 class="text-center text-3xl font-medium">أختر طريقة الدفع المناسبة لك</h2> -->
           <div class="bg-fp1 rounded-lg flex justify-evenly sm:flex-col items-center p-2 mt-4" v-if="payData.type == 'cash'">
             <p class="me-2 text-lg lg:text-xl text-white font-bold">{{ $t("pay_cash") }}:</p>
-            <p class="text-2xl text-white font-bold -mb-1">{{ props.vodafone_cash }}</p>
+            <p class="text-2xl text-white font-bold -mb-1">{{ globalStore.appSettings.vodafone_cash }}</p>
+          </div>
+          <div class="bg-fp1 rounded-lg flex justify-evenly sm:flex-col items-center p-2 mt-4" v-if="payData.type == 'cash'">
+            <p class="me-2 text-lg lg:text-xl text-white font-bold">{{ $t("pay_instapay") }}:</p>
+            <p class="text-2xl text-white font-bold -mb-1">{{ globalStore.appSettings.instapay }}</p>
           </div>
           <div class="my-6 w-full mx-auto" v-show="payData.type == 'code' && payData.type != 'wallet'">
             <label for="code" class="block mb-2 text-sm lg:text-md font-medium text-fpDark2 dark:text-gray-300">{{ $t("code") }}</label>
@@ -129,20 +133,12 @@
   </div>
 </template>
 <script setup>
-import {useCourseStore} from "@/store/CourseStore";
+import {useGlobalStore} from "@/store/GlobalStore";
 import {useAuthStore} from "@/store/AuthStore";
 import {usePayStore} from "@/store/PayStore";
-import {useOfferStore} from "@/store/OfferStore";
 const PayStore = usePayStore();
+const globalStore = useGlobalStore();
 const payData = PayStore.getPayData;
 const auth = useAuthStore();
-const CourseStore = useCourseStore();
-const OfferStore = useOfferStore();
 const errors = reactive(useErrors());
-const props = defineProps({
-  vodafone_cash: {
-    type: String,
-    required: true,
-  },
-});
 </script>

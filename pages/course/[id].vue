@@ -17,7 +17,7 @@
     </div>
     <TransitionGroup name="lessons-down" v-if="Object.keys(globalStore.appSettings).length">
       <CourseModalVideo v-if="CourseStore.getVideoData.show" />
-      <CourseModalPay v-if="PayStore.getPayData.show" :vodafone_cash="globalStore.appSettings.vodafone_cash" />
+      <CourseModalPay v-if="PayStore.getPayData.show" />
       <CourseModelAttachments v-if="CourseStore.getLectureAttachments.show && CourseStore.getLectureAttachments.attachments.length > 0" />
     </TransitionGroup>
   </section>

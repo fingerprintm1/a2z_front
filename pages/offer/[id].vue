@@ -66,7 +66,7 @@
       </div>
     </div>
     <Transition name="lessons-down">
-      <CourseModalPay v-if="PayStore.getPayData.show" :vodafone_cash="globalStore.appSettings.vodafone_cash" />
+      <CourseModalPay v-if="PayStore.getPayData.show" />
     </Transition>
   </section>
 </template>

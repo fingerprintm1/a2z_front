@@ -22,22 +22,22 @@
             <button
               @click="setData(section.courses)"
               v-for="section in teacher.sections"
-              class="link_classe relative z-20 hover:scale-105 shadow-lg transition-all group overflow-hidden border-0"
+              class="link_classe relative z-20 hover:scale-105 shadow-lg transition-all group overflow-hidden border-0 mb-10"
             >
               <p
-                class="absolute z-10 inset-x-0 -top-20 bg-white text-fp2 text-center text-3xl font-bold py-2 transition-all group-hover:top-0"
+                class="absolute z-10 inset-x-0 -top-20 bg-white dark:bg-fpDark2 text-fp2 text-center text-3xl font-bold py-2 transition-all group-hover:top-0"
                 v-text="teacher['name_' + currentLocale]"
               ></p>
               <img :src="`${baseURL}/images/${section.photo}`" alt="post image" class="object-cover rounded-t-2xl" />
               <p
-                class="absolute z-10 inset-x-0 -bottom-20 bg-white text-fp3 text-center text-xl font-bold py-2 transition-all group-hover:bottom-0"
+                class="absolute z-10 inset-x-0 -bottom-20 bg-white dark:bg-fpDark2 text-fp3 text-center text-xl font-bold py-2 transition-all group-hover:bottom-0"
                 v-text="teacher['description_' + currentLocale].slice(0, 30)"
               ></p>
             </button>
           </div>
         </div>
         <div class="mt-10 lg:mt-28" v-show="showSection">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center mb-10">
             <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto">{{ $t("courses") }}</h2>
             <button
               @click="showSection = false"

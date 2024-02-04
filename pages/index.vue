@@ -23,13 +23,13 @@
     </section>
     <section class="lg:pb-24">
       <div class="container mx-auto">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-6 lg:mb-16">{{ $t("classes") }}</h2>
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-6 mb-10 lg:mb-16">{{ $t("classes") }}</h2>
         <HomeSections :sections="globalStore.homeData.sections" />
       </div>
     </section>
     <section class="pb-8 lg:pb-24">
       <div class="container mx-auto">
-        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 mb-16 lg:mb-8">{{ $t("all_offers") }}</h2>
+        <h2 class="text-3xl lg:text-5xl text-fp2 dark:text-fp1 font-bold border-b-2 border-fp2 w-fit mx-auto pb-2 lg:pb-6 my-10 lg:mb-8">{{ $t("all_offers") }}</h2>
         <HomeOffers :offers="globalStore.homeData.offers" />
       </div>
     </section>

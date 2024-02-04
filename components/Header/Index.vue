@@ -15,7 +15,11 @@
       <Transition :name="locale == 'ar' ? 'slide-left' : 'slide-right'">
         <HeaderNavSM v-if="globalStore.toggleMenu" />
       </Transition>
+
       <HeaderButtons class="hidden xl:flex" />
+      <TransitionGroup name="lessons-down" v-if="globalStore.ModalMessage">
+        <ModalMessage />
+      </TransitionGroup>
     </div>
   </header>
 </template>

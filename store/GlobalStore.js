@@ -6,6 +6,8 @@ export const useGlobalStore = defineStore("global", {
     return {
       showStudentMenu: ref("courses"),
       menuMobileScreen: ref(false),
+      ModalMessage: ref(false),
+      messageNotification: ref(""),
       appSettings: [],
       notifications: reactive([]),
       mode: ref("dark"),
