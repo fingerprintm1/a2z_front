@@ -24,14 +24,14 @@
               v-for="section in teacher.sections"
               class="link_classe relative z-20 hover:scale-105 shadow-lg transition-all group overflow-hidden border-0 mb-10"
             >
-              <p
+              <!-- <p
                 class="absolute z-10 inset-x-0 -top-20 bg-white dark:bg-fpDark2 text-fp2 text-center text-3xl font-bold py-2 transition-all group-hover:top-0"
                 v-text="teacher['name_' + currentLocale]"
-              ></p>
+              ></p> -->
               <img :src="`${baseURL}/images/${section.photo}`" alt="post image" class="object-cover rounded-t-2xl" />
               <p
                 class="absolute z-10 inset-x-0 -bottom-20 bg-white dark:bg-fpDark2 text-fp3 text-center text-xl font-bold py-2 transition-all group-hover:bottom-0"
-                v-text="teacher['description_' + currentLocale].slice(0, 30)"
+                v-text="section['name_' + currentLocale]"
               ></p>
             </button>
           </div>
