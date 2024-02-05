@@ -10,7 +10,9 @@
           <span class="text-fpDarkGray dark:text-fpLightBack text-sm block mt-1"
             ><Icon class="text-xl text-fp1 me-1" name="ic:outline-person" />{{ $t("number_subscriptions") }} {{ course.subscribers }}</span
           >
-          <span class="text-fpDarkGray text-sm block mt-1"><Icon class="text-xl text-fp1 me-1" name="ic:baseline-laptop-chromebook" />{{ $t("available_seats") }} 50</span>
+          <nuxt-link :to="localePath(`/section/${course.section.id}`)" class="text-fp2 text-sm block mt-1"
+            ><Icon class="text-xl text-fp1 me-1" name="system-uicons:panel-sectioned" />{{ $t("section") }}: {{ course.section["name_" + currentLocale] }}</nuxt-link
+          >
           <span class="text-fpDarkGray dark:text-fpLightBack text-sm block mt-1">
             <Icon class="text-xl text-fp1 me-1" name="ic:twotone-discount" />{{ $t("discount") }} {{ course.discount }} {{ course.currency.name }}
           </span>
