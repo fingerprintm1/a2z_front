@@ -55,7 +55,7 @@
               <div class="flex items-center sm:w-full sm:justify-between sm:px-4">
                 <Icon name="ic-baseline-play-circle" class="text-3xl lg:ms-6 dark:text-white" />
                 <span class="font-bold sm:text-md md:text-xl text-fp1 lg:ms-2">{{ lecture.title }}</span>
-                <span class="font-normal sm:text-md md:text-xl text-fp2 lg:ms-2" v-if="lecture.price != 0">({{ lecture.price }} جنية)</span>
+                <span class="font-normal sm:text-md md:text-xl text-fp2 lg:ms-2" v-if="lecture.price != 0 && !course.subscribed">({{ lecture.price }} جنية)</span>
                 <Icon :name="`${lecture.subscribed ? 'mdi-eye-outline' : 'ic-baseline-lock'}`" class="sm:dark:text-white text-xl lg:hidden" />
               </div>
               <div class="flex items-center gap-x-4 sm:w-full sm:justify-center sm:px-4">

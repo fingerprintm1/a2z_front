@@ -7,7 +7,7 @@
         <div class="rounded-2xl overflow-hidden sm:pb-20" v-for="offer in offers" :key="offer.id">
           <div class="shadow-xl lg:my-10 rounded-lg md:mx-4 sm:mx-1 bg-white dark:bg-fpDark2 flex flex-col pb-8">
             <nuxt-link :to="localePath(`/offer/${offer.id}`)">
-              <img :src="`${baseURL}/images/${offer.photo}`" alt="post image" class="w-full h-[250px] object-cover rounded-t-2xl" />
+              <img :src="`${baseURL}/images/${offer.photo}`" alt="post image" class="w-full object-cover rounded-t-2xl" />
             </nuxt-link>
             <div class="px-6 h-full">
               <nuxt-link :to="localePath(`/offer/${offer.id}`)" class="text-nd dark:text-fpLightBack text-fp1 font-bold mt-6 block">{{ offer["name_" + currentLocale] }}</nuxt-link>

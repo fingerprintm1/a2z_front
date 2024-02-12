@@ -1,9 +1,9 @@
 <template>
   <div class="grid grid-cols-1 md:grid-cols-3 h-fit mx-auto">
-    <div class="rounded-2xl overflow-hidden sm:pb-20" v-for="course in props.courses" :key="course.id">
+    <div class="rounded-2xl overflow-hidden sm:pb-20" v-for="course in courses" :key="course.id">
       <div class="shadow-xl lg:my-10 rounded-lg md:mx-4 sm:mx-1 bg-white dark:bg-fpDark2 flex flex-col pb-8">
         <nuxt-link :to="localePath(`/course/${course.id}`)">
-          <img :src="`${baseURL}/images/${course.photo}`" alt="post image" class="w-full h-[250px] rounded-t-2xl" />
+          <img :src="`${baseURL}/images/${course.photo}`" alt="post image" class="w-full rounded-t-2xl" />
         </nuxt-link>
         <div class="px-6 h-full">
           <nuxt-link :to="localePath(`/course/${course.id}`)" class="text-nd dark:text-fpLightBack text-fp1 font-bold mt-6 block">{{ `${course.name} ` }}</nuxt-link>
