@@ -1,9 +1,6 @@
 <template>
   <div>
-    <a :href="`${baseURL}/images/${course.description_photo}`" target="_blank" class="flex justify-center items-center w-full">
-      <img :src="`${baseURL}/images/${course.description_photo}`" class="w-auto object-cover lg:max-h-[800px]" />
-    </a>
-    <div class="border border-gray-300 rounded-lg mt-20">
+    <div class="border border-gray-300 rounded-lg">
       <h1 class="font-bold text-3xl mb-4 whitespace-nowrap text-fp1 p-4 border-b-2 border-fp1 shadow-md line-right text-center">{{ $t("course_aboute") }}</h1>
       <p class="p-4 lg:pr-10 font-bold text-md lg:text-lg space-y-2 dark:text-fpLightBack" v-html="course['description_' + currentLocale]"></p>
     </div>
