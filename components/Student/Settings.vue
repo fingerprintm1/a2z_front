@@ -78,6 +78,20 @@
                   <p v-if="errors.has('birth')" class="mt-2 text-sm text-red-500">{{ errors.get("birth") }}</p>
                 </div>
               </div>
+              <div class="sm:w-full md:w-1/2 mt-2">
+                <label for="section_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ $t("select_section") }}</label>
+                <select
+                  name="section_id"
+                  id="section_id"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-fpDark2 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  v-model="updateValue.section_id"
+                  :class="errors.has('section_id') ? 'is-invalid' : ''"
+                  required
+                >
+                  <option v-for="section in sections" :key="section.id" :value="section.id" v-text="section['name_' + currentLocale]"></option>
+                </select>
+                <p v-if="errors.has('section_id')" class="mt-2 text-sm text-red-500">{{ errors.get("section_id") }}</p>
+              </div>
               <div class="p-2 sm:w-full md:w-1/2">
                 <label for="success" class="block mb-2 text-sm lg:text-md font-medium text-fpDark2 dark:text-gray-300">{{ $t("email_user") }}</label>
                 <div class="relative">
@@ -98,7 +112,7 @@
                 </div>
               </div>
 
-              <div class="p-2 sm:w-full md:w-1/2">
+              <div class="p-2 sm:w-full md:w-1/3">
                 <div class="relative">
                   <label for="oldPassword" class="leading-7 text-sm text-gray-600 dark:text-fpLightBack">{{ $t("old_password") }}</label>
                   <div class="relative">
@@ -123,7 +137,7 @@
                   <p v-if="errors.has('password')" class="mt-2 text-sm text-red-500">{{ errors.get("password") }}</p>
                 </div>
               </div>
-              <div class="p-2 sm:w-full md:w-1/2">
+              <div class="p-2 sm:w-full md:w-1/3">
                 <label for="password" class="leading-7 text-sm text-gray-600 dark:text-fpLightBack">{{ $t("new_password") }}</label>
                 <div class="relative">
                   <button
@@ -144,7 +158,7 @@
                   <p v-if="errors.has('password')" class="mt-2 text-sm text-red-500">{{ errors.get("password") }}</p>
                 </div>
               </div>
-              <div class="p-2 sm:w-full md:w-1/2">
+              <div class="p-2 sm:w-full md:w-1/3">
                 <label for="cpassword" class="leading-7 text-sm text-gray-600 dark:text-fpLightBack">{{ $t("confirm_password") }}</label>
                 <div class="relative">
                   <button
@@ -199,6 +213,20 @@ const {currentLocale, dir} = useLang();
 const {t} = useI18n();
 let togglePassword = ref(false);
 let startValueEmail = ref(auth.user.email.slice(0, auth.user.email.indexOf("@")));
+let sections = ref([]);
+const getSections = () => {
+  $fetch(`${useRuntimeConfig().public.apiURL}/sections`).then(res => {
+    if (res.status) {
+      sections.value = res.data;
+    } else {
+      tost.add({
+        type: "error",
+        message: res.message,
+      });
+    }
+  });
+};
+getSections();
 const tost = useTostStore();
 let updateValue = reactive({
   name_ar: auth.user.name_ar,
@@ -206,6 +234,7 @@ let updateValue = reactive({
   phone: auth.user.phone,
   birth: auth.user.birth,
   email: auth.user.email,
+  section_id: auth.user.section_id,
   old_password: "",
   password: "",
   password_confirmation: "",

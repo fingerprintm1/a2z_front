@@ -100,7 +100,20 @@
               <p v-if="errors.has('birth')" class="mt-2 text-sm text-red-500">{{ errors.get("birth") }}</p>
             </div>
           </div>
-
+          <div class="mb-6">
+            <label for="section_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ $t("select_section") }}</label>
+            <select
+              name="section_id"
+              id="section_id"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-fpDark2 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              v-model="register.section_id"
+              :class="errors.has('section_id') ? 'is-invalid' : ''"
+              required
+            >
+              <option v-for="section in sections" :key="section.id" :value="section.id" v-text="section['name_' + currentLocale]"></option>
+            </select>
+            <p v-if="errors.has('section_id')" class="mt-2 text-sm text-red-500">{{ errors.get("section_id") }}</p>
+          </div>
           <div class="mb-6">
             <label for="success" class="block mb-2 text-sm lg:text-md font-medium text-fpDark2 dark:text-gray-300">{{ $t("email_user") }}</label>
             <div class="relative mb-6">
@@ -199,11 +212,26 @@ useHead({
   title: t("new_account"),
   meta: [{name: "title", content: t("new_account")}],
 });
+let sections = ref([]);
+const getSections = () => {
+  $fetch(`${useRuntimeConfig().public.apiURL}/sections`).then(res => {
+    if (res.status) {
+      sections.value = res.data;
+    } else {
+      tost.add({
+        type: "error",
+        message: res.message,
+      });
+    }
+  });
+};
+getSections();
 let register = reactive({
   name_ar: "",
   name_en: "",
   phone: "",
   phone_parent: "",
+  section_id: null,
   birth: "",
   email: "",
   password: "",

@@ -33,8 +33,8 @@
           </div>
           <hr class="-mr-10 mt-2 w-[109%]" />
           <div class="flex items-center justify-between mt-10">
-            <span class="text-md lg:text-2xl dark:text-fpLightBack">{{ $t("status") }}:</span>
-            <p class="text-lg text-gray-600 dark:text-gray-300">Approved</p>
+            <span class="text-md lg:text-2xl dark:text-fpLightBack">{{ $t("section") }}:</span>
+            <p class="text-lg text-gray-600 dark:text-gray-300" v-text="user.section ?user.section['name_' + currentLocale] :'--'"></p>
           </div>
           <hr class="-mr-10 mt-2 w-[109%]" />
           <div class="flex items-center justify-between mt-10">
