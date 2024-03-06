@@ -6,7 +6,7 @@
         <Icon class="text-white text-3xl" name="mdi:close" />
       </button>
       <div class="overflow-y-scroll h-full">
-        <p class="text-white text-2xl" v-html="globalStore.messageNotification"></p>
+        <p class="text-white text-2xl whitespace-pre-wrap" v-html="globalStore.messageNotification"></p>
       </div>
     </div>
   </div>
